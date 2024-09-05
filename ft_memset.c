@@ -6,7 +6,7 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 02:42:34 by lowatell          #+#    #+#             */
-/*   Updated: 2024/08/19 03:42:41 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/08/20 22:28:22 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memset(void *b, int c, size_t len)
 {
 	size_t	i;
-	
+
 	if (!b)
 		return (0);
 	i = 0;
