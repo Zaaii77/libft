@@ -6,7 +6,7 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 23:54:44 by lowatell          #+#    #+#             */
-/*   Updated: 2024/08/28 06:12:05 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/09/06 04:07:07 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t	i;
 
 	if (!dst || !src)
-		return (i);
+		return (0);
 	i = 0;
 	while (i < size && src[i])
 	{

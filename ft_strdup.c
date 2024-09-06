@@ -1,23 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 22:28:48 by lowatell          #+#    #+#             */
-/*   Updated: 2024/09/06 03:58:21 by lowatell         ###   ########.fr       */
+/*   Created: 2024/09/06 04:13:53 by lowatell          #+#    #+#             */
+/*   Updated: 2024/09/06 04:20:10 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <ctype.h>
-#include <strings.h>
 
-int	main(int ac, char **av)
+char	*ft_strdup(const char *s1)
 {
-	(void)ac;
-	printf("%d\n", atoi(av[1]));
-	printf("%d\n", ft_atoi(av[1]));
+	int		i;
+	int		j;
+	char	*s2;
+
+	if (!s1)
+		return (NULL);
+	i = 0;
+	j = 0;
+	while (s1[j])
+		j++;
+	s2 = (char *)malloc((sizeof(char) * j) + 1);
+	if (!s2)
+		return (NULL);
+	while (s1[i])
+	{
+		s2[i] == s1[i];
+		i++;
+	}
+	s2[i] = '\0';
+	return (s2);
 }

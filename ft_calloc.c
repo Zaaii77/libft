@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 22:28:48 by lowatell          #+#    #+#             */
-/*   Updated: 2024/09/06 03:58:21 by lowatell         ###   ########.fr       */
+/*   Created: 2024/09/06 04:07:35 by lowatell          #+#    #+#             */
+/*   Updated: 2024/09/06 04:13:02 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <ctype.h>
-#include <strings.h>
 
-int	main(int ac, char **av)
+void	*ft_calloc(size_t count, size_t size)
 {
-	(void)ac;
-	printf("%d\n", atoi(av[1]));
-	printf("%d\n", ft_atoi(av[1]));
+	void	*result;
+	size_t	i;
+
+	i = 0;
+	result = (void *)malloc(count * size + 1);
+	if (!result)
+		return (NULL);
+	while (i < size)
+	{
+		((unsigned char *)result)[i] = '\0';
+		i++;
+	}
+	return (result);
 }
