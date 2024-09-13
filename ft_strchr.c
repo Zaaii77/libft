@@ -6,7 +6,7 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 00:54:16 by lowatell          #+#    #+#             */
-/*   Updated: 2024/09/04 18:50:29 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/09/12 19:18:54 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ char	*ft_strchr(const char *s, int c)
 {
 	int	i;
 
-	if (!s)
-		return (0);
 	i = 0;
 	while (s[i])
 	{
@@ -26,7 +24,7 @@ char	*ft_strchr(const char *s, int c)
 		else
 			i++;
 	}
-	if (c == '\0')
+	if ((char)c == '\0')
 		return ((char *)s + i);
 	return (0);
 }

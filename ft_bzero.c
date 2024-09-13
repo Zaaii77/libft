@@ -6,7 +6,7 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 03:44:08 by lowatell          #+#    #+#             */
-/*   Updated: 2024/08/19 03:46:44 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/09/09 16:05:34 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
 
-	if (!s)
-		return ;
 	i = 0;
 	while (i < n)
 	{

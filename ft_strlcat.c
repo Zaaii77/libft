@@ -6,7 +6,7 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 23:51:39 by lowatell          #+#    #+#             */
-/*   Updated: 2024/09/04 18:18:30 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/09/09 16:10:30 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	i;
 	size_t	j;
 
-	if (!dst || !src)
-		return (0);
 	i = 0;
 	while (i < dstsize && dst[i])
 		i++;

@@ -6,7 +6,7 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 04:13:53 by lowatell          #+#    #+#             */
-/*   Updated: 2024/09/06 04:27:40 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/09/09 21:03:07 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ char	*ft_strdup(const char *s1)
 	int		j;
 	char	*s2;
 
-	if (!s1)
-		return (NULL);
 	i = 0;
 	j = 0;
 	while (s1[j])

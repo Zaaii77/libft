@@ -1,38 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/06 03:49:12 by lowatell          #+#    #+#             */
-/*   Updated: 2024/09/09 21:22:54 by lowatell         ###   ########.fr       */
+/*   Created: 2024/09/08 20:55:31 by lowatell          #+#    #+#             */
+/*   Updated: 2024/09/08 21:14:19 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+t_list	*ft_lstlast(t_list *lst)
 {
-	int	nbr;
-	int	sign;
-	int	i;
+	t_list	*temp;
 
-	i = 0;
-	sign = 1;
-	nbr = 0;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '+' || str[i] == '-')
+	while (lst)
 	{
-		if (str[i] == '-')
-			sign *= -1;
-		i++;
+		temp = lst;
+		if (!lst->next)
+			return (temp);
+		lst = lst->next;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		nbr = (nbr * 10) + str[i] - '0';
-		i++;
-	}
-	return (nbr * sign);
+	return (NULL);
 }

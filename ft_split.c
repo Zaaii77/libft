@@ -6,18 +6,19 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 22:41:10 by lowatell          #+#    #+#             */
-/*   Updated: 2024/09/07 03:58:03 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/09/12 22:07:18 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+//#include <stdio.h>
 
 void	*ft_free_tab(char **str, int len)
 {
 	int	i;
 
 	i = 0;
-	while (i <= len)
+	while (i < len)
 	{
 		free(str[i]);
 		i++;
@@ -35,17 +36,17 @@ int	ft_countword(char *s, char c)
 	count = 0;
 	while (s[i])
 	{
-		while (s[i] == c && s[i])
+		while (s[i] == c && s[i] != '\0')
 			i++;
 		if (s[i])
 			count++;
-		while (s[i] != c && s[i])
+		while (s[i] != c && s[i] != '\0')
 			i++;
 	}
 	return (count);
 }
 
-char	*ft_dostr(char *s, char c, char **strs, int len)
+char	*ft_dostr(char *s, char c)
 {
 	int		i;
 	int		j;
@@ -57,7 +58,7 @@ char	*ft_dostr(char *s, char c, char **strs, int len)
 		j++;
 	str = (char *)malloc(sizeof(char) * j + 1);
 	if (!str)
-		return (ft_free_tab(strs, len));
+		return (NULL);
 	while (i < j)
 	{
 		str[i] = s[i];
@@ -71,7 +72,6 @@ char	**ft_split(char const *s, char c)
 {
 	char	**strs;
 	int		i;
-	int		j;
 
 	if (!s)
 		return (NULL);
@@ -79,18 +79,19 @@ char	**ft_split(char const *s, char c)
 	if (!strs)
 		return (NULL);
 	i = 0;
-	j = 0;
-	while (s[j])
+	while (*s)
 	{
-		while (s[j] && s[j] == c)
-			j++;
-		if (s[j])
+		while (*s && *s == c)
+			s++;
+		if (*s)
 		{
-			strs[i] = ft_dostr((char *)s + j, c, strs, i);
+			strs[i] = ft_dostr((char *)s, c);
+			if (!strs[i])
+				return (ft_free_tab(strs, i));
 			i++;
 		}
-		while (s[j] != c && s[j])
-			j++;
+		while (*s != c && *s)
+			s++;
 	}
 	strs[i] = 0;
 	return (strs);

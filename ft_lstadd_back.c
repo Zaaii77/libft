@@ -1,38 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/06 03:49:12 by lowatell          #+#    #+#             */
-/*   Updated: 2024/09/09 21:22:54 by lowatell         ###   ########.fr       */
+/*   Created: 2024/09/08 21:02:11 by lowatell          #+#    #+#             */
+/*   Updated: 2024/09/10 00:24:41 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	int	nbr;
-	int	sign;
-	int	i;
+	t_list	*last;
+	t_list	*node;
 
-	i = 0;
-	sign = 1;
-	nbr = 0;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '+' || str[i] == '-')
+	node = *lst;
+	if (*lst && new)
 	{
-		if (str[i] == '-')
-			sign *= -1;
-		i++;
+		while (node)
+		{
+			last = node;
+			if (last->next == NULL)
+			{
+				last = new;
+				node->next = last;
+				return ;
+			}
+			node = node->next;
+		}
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		nbr = (nbr * 10) + str[i] - '0';
-		i++;
-	}
-	return (nbr * sign);
+	else if (new)
+		*lst = new;
+	else
+		return ;
 }
