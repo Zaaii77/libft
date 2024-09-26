@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/08 20:55:31 by lowatell          #+#    #+#             */
-/*   Updated: 2024/09/08 21:14:19 by lowatell         ###   ########.fr       */
+/*   Created: 2024/09/17 14:26:08 by lowatell          #+#    #+#             */
+/*   Updated: 2024/09/17 14:28:29 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,15 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	t_list	*temp;
+	t_list	*last;
 
+	if (!lst)
+		return (NULL);
+	last = lst;
 	while (lst)
 	{
-		temp = lst;
-		if (!lst->next)
-			return (temp);
+		last = lst;
 		lst = lst->next;
 	}
-	return (NULL);
+	return (last);
 }

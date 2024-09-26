@@ -6,7 +6,7 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 04:22:10 by lowatell          #+#    #+#             */
-/*   Updated: 2024/09/10 00:25:18 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/09/17 23:55:43 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	i = 0;
 	while (s[i])
 	{
-		str[i] = f(i, str[i]);
+		str[i] = f(i, s[i]);
 		i++;
 	}
 	str[i] = '\0';

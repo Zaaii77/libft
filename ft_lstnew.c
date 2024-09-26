@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/08 19:44:56 by lowatell          #+#    #+#             */
-/*   Updated: 2024/09/08 19:50:35 by lowatell         ###   ########.fr       */
+/*   Created: 2024/09/17 14:12:47 by lowatell          #+#    #+#             */
+/*   Updated: 2024/09/18 13:49:03 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list	*new_node;
+	t_list	*node;
 
-	new_node = (t_list *)malloc(sizeof(t_list));
-	if (!new_node)
+	node = (t_list *)malloc(sizeof(t_list));
+	if (!node)
 		return (NULL);
-	new_node->content = content;
-	new_node->next = NULL;
-	return (new_node);
+	node->content = content;
+	node->next = NULL;
+	return (node);
 }

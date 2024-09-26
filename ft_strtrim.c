@@ -6,39 +6,11 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 14:37:20 by lowatell          #+#    #+#             */
-/*   Updated: 2024/09/11 02:10:26 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/09/26 11:40:15 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int	ft_check_start_end(char const *s1, char const *set)
-{
-	int	i;
-	int	j;
-	int	count;
-
-	i = 0;
-	j = 0;
-	count = 0;
-	while (s1[i])
-		i++;
-	while (set[j])
-	{
-		if (set[j] == s1[0])
-		{
-			count++;
-			j++;
-		}
-		if (set[j] == s1[i - 1])
-		{
-			count++;
-			j++;
-		}
-		j++;
-	}
-	return (count);
-}
 
 int	ft_char_in_set(char c, char const *set)
 {
@@ -54,27 +26,50 @@ int	ft_char_in_set(char c, char const *set)
 	return (0);
 }
 
+int	ft_str_size(char const *str, char const *set)
+{
+	int	i;
+	int	j;
+	int	count;
+
+	count = 0;
+	i = 0;
+	j = ft_strlen(str) - 1;
+	if (j < 0)
+		j = 0;
+	while (ft_char_in_set(str[j], set) && str[j])
+	{
+		j--;
+		count++;
+	}
+	while (ft_char_in_set(str[i], set) && str[i])
+	{
+		i++;
+		count++;
+	}
+	if (count <= (int)ft_strlen(str))
+		return (ft_strlen(str) - count);
+	return (0);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	count;
-	size_t	i;
+	int		i;
+	int		j;
 	char	*str;
 
-	if (!s1)
-		return (NULL);
-	count = ft_check_start_end(s1, set);
-	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) - count) + 1);
+	str = (char *)malloc(sizeof(char) * ft_str_size(s1, set) + 1);
 	if (!str)
 		return (NULL);
 	i = 0;
-	while (s1[i])
-	{
-		if (!ft_char_in_set(s1[i], set) && (i == 0 || i == (ft_strlen(s1) - 1)))
-			str[i] = s1[i];
-		else
-			str[i] = s1[i];
+	j = 0;
+	while (ft_char_in_set(s1[i], set) && s1[i])
 		i++;
+	while (j + 1 <= ft_str_size(s1, set) && s1[i + j])
+	{
+		str[j] = s1[i + j];
+		j++;
 	}
-	str[i] = '\0';
+	str[j] = '\0';
 	return (str);
 }

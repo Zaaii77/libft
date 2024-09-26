@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/09 15:40:50 by lowatell          #+#    #+#             */
-/*   Updated: 2024/09/11 01:21:26 by lowatell         ###   ########.fr       */
+/*   Created: 2024/09/17 21:09:44 by lowatell          #+#    #+#             */
+/*   Updated: 2024/09/26 11:39:39 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,27 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*obj;
-	t_list	*new;
+	t_list	*list;
+	t_list	*node;
+	void	*new_content;
 
-	if (!(*f) || !(*del) || !lst)
+	if (!lst || !f)
 		return (NULL);
+	list = NULL;
 	while (lst)
 	{
-		obj = f(lst->content);
-		if (!obj)
+		if (lst->content)
+			new_content = f(lst->content);
+		if (new_content)
+			node = ft_lstnew(new_content);
+		if (node == NULL || new_content == NULL)
 		{
-			ft_lstclear(&new, del);
+			del(new_content);
+			ft_lstclear(&list, del);
 			return (NULL);
 		}
-		ft_lstadd_back(&new, obj);
+		ft_lstadd_back(&list, node);
 		lst = lst->next;
 	}
-	return (new);
+	return (list);
 }

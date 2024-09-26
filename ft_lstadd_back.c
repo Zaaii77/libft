@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/08 21:02:11 by lowatell          #+#    #+#             */
-/*   Updated: 2024/09/10 00:24:41 by lowatell         ###   ########.fr       */
+/*   Created: 2024/09/17 15:47:00 by lowatell          #+#    #+#             */
+/*   Updated: 2024/09/19 19:06:51 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,10 @@
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*last;
-	t_list	*node;
 
-	node = *lst;
-	if (*lst && new)
-	{
-		while (node)
-		{
-			last = node;
-			if (last->next == NULL)
-			{
-				last = new;
-				node->next = last;
-				return ;
-			}
-			node = node->next;
-		}
-	}
-	else if (new)
-		*lst = new;
+	last = ft_lstlast(*lst);
+	if (last)
+		last->next = new;
 	else
-		return ;
+		*lst = new;
 }

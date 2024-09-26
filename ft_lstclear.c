@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/09 00:39:55 by lowatell          #+#    #+#             */
-/*   Updated: 2024/09/11 01:23:16 by lowatell         ###   ########.fr       */
+/*   Created: 2024/09/17 20:47:26 by lowatell          #+#    #+#             */
+/*   Updated: 2024/09/19 19:07:09 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,12 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list	*temp;
+	t_list	*tmp;
 
-	if (!lst || !*lst || !del)
-		return ;
-	while (lst && *lst)
+	while (*lst && del)
 	{
-		temp = *lst;
-		del(*lst);
-		free(*lst);
-		*lst = temp->next;
+		tmp = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = tmp;
 	}
 }
