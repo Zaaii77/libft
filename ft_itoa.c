@@ -6,13 +6,13 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 04:07:39 by lowatell          #+#    #+#             */
-/*   Updated: 2024/09/09 21:02:22 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/10/06 23:32:52 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_size(long n)
+static int	ft_size(long n)
 {
 	int	i;
 

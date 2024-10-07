@@ -6,14 +6,13 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 22:41:10 by lowatell          #+#    #+#             */
-/*   Updated: 2024/09/12 22:07:18 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/10/06 23:34:36 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
-void	*ft_free_tab(char **str, int len)
+static void	*ft_free_tab(char **str, int len)
 {
 	int	i;
 
@@ -27,7 +26,7 @@ void	*ft_free_tab(char **str, int len)
 	return (NULL);
 }
 
-int	ft_countword(char *s, char c)
+static int	ft_countword(char *s, char c)
 {
 	int	i;
 	int	count;
@@ -46,7 +45,7 @@ int	ft_countword(char *s, char c)
 	return (count);
 }
 
-char	*ft_dostr(char *s, char c)
+static char	*ft_dostr(char *s, char c)
 {
 	int		i;
 	int		j;

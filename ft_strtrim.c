@@ -6,13 +6,13 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 14:37:20 by lowatell          #+#    #+#             */
-/*   Updated: 2024/09/26 11:40:15 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/10/06 23:34:08 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_char_in_set(char c, char const *set)
+static int	ft_char_in_set(char c, char const *set)
 {
 	int	i;
 
@@ -26,7 +26,7 @@ int	ft_char_in_set(char c, char const *set)
 	return (0);
 }
 
-int	ft_str_size(char const *str, char const *set)
+static int	ft_str_size(char const *str, char const *set)
 {
 	int	i;
 	int	j;
