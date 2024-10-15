@@ -6,7 +6,7 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 04:07:35 by lowatell          #+#    #+#             */
-/*   Updated: 2024/10/08 10:50:18 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/10/15 22:19:14 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,17 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*result;
-	size_t	i;
+	size_t	temp;
 
-	i = 0;
+	if (count != 0 && size != 0)
+	{
+		temp = count * size;
+		if ((temp / count) != size)
+			return (NULL);
+	}
 	result = (void *)malloc(count * size);
 	if (!result)
 		return (NULL);
-	while (i < (count * size))
-	{
-		((char *)result)[i] = '\0';
-		i++;
-	}
+	ft_bzero(result, count * size);
 	return (result);
 }
