@@ -6,7 +6,7 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 14:37:20 by lowatell          #+#    #+#             */
-/*   Updated: 2024/10/08 10:52:28 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/10/15 22:54:57 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		j;
 	char	*str;
 
+	if (!s1 || !set)
+		return (NULL);
 	str = (char *)malloc(sizeof(char) * ft_str_size(s1, set) + 1);
 	if (!str)
 		return (NULL);
