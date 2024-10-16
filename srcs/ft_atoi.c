@@ -6,7 +6,7 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 03:49:12 by lowatell          #+#    #+#             */
-/*   Updated: 2024/10/16 12:34:09 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/10/16 12:41:49 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int	nbr;
-	int	sign;
-	int	i;
+	unsigned long long	nbr;
+	int					sign;
+	int					i;
 
 	i = 0;
 	sign = 1;
@@ -31,9 +31,9 @@ int	ft_atoi(const char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		if ((long)nbr != (((long)nbr * 2) / 2) && sign > 0)
+		if (nbr > 9223372036854775807 && sign > 0)
 			return (-1);
-		if ((long)nbr != (((long)nbr * 2) / 2) && sign < 0)
+		if (nbr > 9223372036854775807 && sign < 0)
 			return (0);
 		nbr = (nbr * 10) + str[i] - '0';
 		i++;
