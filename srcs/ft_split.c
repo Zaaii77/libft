@@ -6,7 +6,7 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 22:41:10 by lowatell          #+#    #+#             */
-/*   Updated: 2024/10/08 10:51:38 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/10/18 11:38:52 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ static char	*ft_dostr(char *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**strs;
-	int		i;
+	size_t	i;
 
 	if (!s)
 		return (NULL);

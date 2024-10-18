@@ -6,7 +6,7 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 18:42:37 by lowatell          #+#    #+#             */
-/*   Updated: 2024/10/08 10:52:10 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/10/18 11:35:05 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int		i;
+	ssize_t		i;
 
 	i = ft_strlen(s);
 	if ((char)c == '\0')

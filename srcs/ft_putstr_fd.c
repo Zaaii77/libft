@@ -6,7 +6,7 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 14:23:37 by lowatell          #+#    #+#             */
-/*   Updated: 2024/10/08 10:51:34 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/10/18 11:38:39 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	int	i;
+	size_t	i;
 
 	if (!s)
 		return ;

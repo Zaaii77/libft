@@ -6,7 +6,7 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 14:28:05 by lowatell          #+#    #+#             */
-/*   Updated: 2024/10/08 10:51:32 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/10/18 11:38:12 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	long	nbr;
 
-	nbr = n;
+	nbr = (long)n;
 	if (nbr < 0)
 	{
 		nbr = nbr * -1;

@@ -6,7 +6,7 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 14:25:31 by lowatell          #+#    #+#             */
-/*   Updated: 2024/10/08 10:51:29 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/10/18 11:38:02 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	int	i;
+	size_t	i;
 
 	if (!s)
 		return ;

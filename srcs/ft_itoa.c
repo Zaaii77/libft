@@ -6,7 +6,7 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 04:07:39 by lowatell          #+#    #+#             */
-/*   Updated: 2024/10/08 10:50:33 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/10/18 11:33:19 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	*ft_itoa(int n)
 	int		i;
 	long	nbr;
 
-	nbr = n;
+	nbr = (long)n;
 	i = ft_size(nbr);
 	str = (char *)malloc(sizeof(char) * i + 1);
 	if (!str)
