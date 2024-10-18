@@ -6,19 +6,16 @@
 #    By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/20 13:23:46 by lowatell          #+#    #+#              #
-#    Updated: 2024/10/16 11:49:51 by lowatell         ###   ########.fr        #
+#    Updated: 2024/10/18 18:14:31 by lowatell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror 
+CFLAGS = -Wall -Wextra -Werror
 RM = rm -rf
 AR = ar rcs
 
-SRC_DIR = srcs
-BONUS_DIR = bonus
 NAME = libft.a
-INCS = inc
 
 SRCS =  ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 		ft_isprint.c ft_strlen.c ft_memset.c ft_bzero.c \
@@ -30,16 +27,16 @@ SRCS =  ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 		ft_strmapi.c ft_striteri.c ft_putchar_fd.c \
 		ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
-OBJS = $(addprefix $(SRC_DIR)/, $(SRCS:.c=.o))
+OBJS = $(SRCS:.c=.o)
 
 BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
 		ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
 		ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 
-BONUS_OBJS = $(addprefix $(BONUS_DIR)/, $(BONUS:.c=.o))
+BONUS_OBJS = $(BONUS:.c=.o)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@ -I $(INCS)
+	$(CC) $(CFLAGS) -c $< -o $@ -I .
 
 all: $(NAME)
 
