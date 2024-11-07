@@ -6,7 +6,7 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 10:35:10 by lowatell          #+#    #+#             */
-/*   Updated: 2024/11/05 12:29:00 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/11/07 17:19:58 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,14 @@
 
 # include <stdarg.h>
 # include "libft.h"
+
+# ifdef __linux__
+#  define NULL_STR "(nil)"
+#  define PTR_NULL "(nil)"
+# else
+#  define NULL_STR "(null)"
+#  define PTR_NULL "0x0"
+# endif
 
 size_t		ft_putchar(int c);
 size_t		ft_putstr(char *str);

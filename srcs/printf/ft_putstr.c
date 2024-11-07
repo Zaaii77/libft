@@ -6,11 +6,17 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 23:37:36 by lowatell          #+#    #+#             */
-/*   Updated: 2024/11/05 12:28:17 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/11/07 17:17:38 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incs/ft_printf.h"
+
+# ifdef __linux__
+#  define NULL_STR "(nil)"
+# else
+#  define NULL_STR "(null)"
+# endif
 
 size_t	ft_putstr(char *str)
 {
@@ -18,7 +24,7 @@ size_t	ft_putstr(char *str)
 	size_t	count;
 
 	if (!str)
-		return (ft_putstr("(null)"));
+		return (ft_putstr(NULL_STR));
 	i = 0;
 	count = 0;
 	while (str[i])

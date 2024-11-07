@@ -6,7 +6,7 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 11:18:48 by lowatell          #+#    #+#             */
-/*   Updated: 2024/11/05 12:27:49 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/11/07 17:20:07 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_print_address(void *ptr, char *str)
 	size_t		base;
 
 	if (!ptr)
-		return (ft_putstr("0x0"));
+		return (ft_putstr(PTR_NULL));
 	if (!str)
 		return (0);
 	base = ft_strlen(str);
