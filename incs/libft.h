@@ -6,7 +6,7 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 00:02:25 by lowatell          #+#    #+#             */
-/*   Updated: 2024/09/09 16:03:40 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/11/07 07:33:34 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include "ft_printf.h"
+# include "get_next_line.h"
 
 typedef struct s_list
 {

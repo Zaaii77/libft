@@ -6,7 +6,7 @@
 #    By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/20 13:23:46 by lowatell          #+#    #+#              #
-#    Updated: 2024/11/05 12:31:10 by lowatell         ###   ########.fr        #
+#    Updated: 2024/11/07 07:28:39 by lowatell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ AR = ar rcs
 
 SRC_DIR = srcs
 PRINTF_DIR = $(addprefix $(SRC_DIR)/, printf)
+GNL_DIR = $(addprefix $(SRC_DIR)/, get_next_line)
 INCS_DIR = incs
 
 NAME = libft.a
@@ -44,6 +45,10 @@ PRINTF = ft_putptr.c ft_print_address.c ft_printf.c ft_putchar.c \
 
 OBJS_PRINTF = $(addprefix $(PRINTF_DIR)/, $(PRINTF:.c=.o))
 
+GNL = get_next_line.c get_next_line_utils.c \
+
+GNL_OBJS = $(addprefix $(GNL_DIR)/, $(GNL:.c=.o))
+
 %.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@ -I $(INCS_DIR)
 
@@ -52,14 +57,14 @@ all: bonus
 $(NAME): all
 
 clean:
-	@$(RM) $(OBJS) $(BONUS_OBJS) $(OBJS_PRINTF)
+	@$(RM) $(OBJS) $(BONUS_OBJS) $(OBJS_PRINTF) $(GNL_OBJS)
 
 fclean: clean
 	@$(RM) $(NAME)
 
 re: fclean all
 
-bonus: $(OBJS) $(BONUS_OBJS) $(OBJS_PRINTF)
-	@$(AR) $(NAME) $(OBJS) $(BONUS_OBJS) $(OBJS_PRINTF)
+bonus: $(OBJS) $(BONUS_OBJS) $(OBJS_PRINTF) $(GNL_OBJS)
+	@$(AR) $(NAME) $(OBJS) $(BONUS_OBJS) $(OBJS_PRINTF) $(GNL_OBJS)
 
 .PHONY: all clean fclean re bonus
