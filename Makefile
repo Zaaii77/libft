@@ -6,7 +6,7 @@
 #    By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/20 13:23:46 by lowatell          #+#    #+#              #
-#    Updated: 2024/11/07 07:28:39 by lowatell         ###   ########.fr        #
+#    Updated: 2024/11/07 07:51:21 by lowatell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,19 +52,24 @@ GNL_OBJS = $(addprefix $(GNL_DIR)/, $(GNL:.c=.o))
 %.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@ -I $(INCS_DIR)
 
+GREEN = \033[32m
+
 all: bonus
 
 $(NAME): all
 
 clean:
 	@$(RM) $(OBJS) $(BONUS_OBJS) $(OBJS_PRINTF) $(GNL_OBJS)
+	@echo "$(GREEN)Objects files has been deleted."
 
 fclean: clean
 	@$(RM) $(NAME)
+	@echo "$(GREEN)libft.a has been deleted."
 
 re: fclean all
 
 bonus: $(OBJS) $(BONUS_OBJS) $(OBJS_PRINTF) $(GNL_OBJS)
 	@$(AR) $(NAME) $(OBJS) $(BONUS_OBJS) $(OBJS_PRINTF) $(GNL_OBJS)
+	@echo "$(GREEN)libft.a has been compiled."
 
 .PHONY: all clean fclean re bonus
