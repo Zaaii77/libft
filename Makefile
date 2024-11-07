@@ -6,7 +6,7 @@
 #    By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/20 13:23:46 by lowatell          #+#    #+#              #
-#    Updated: 2024/11/07 07:51:21 by lowatell         ###   ########.fr        #
+#    Updated: 2024/11/07 09:24:26 by lowatell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,7 +60,7 @@ $(NAME): all
 
 clean:
 	@$(RM) $(OBJS) $(BONUS_OBJS) $(OBJS_PRINTF) $(GNL_OBJS)
-	@echo "$(GREEN)Objects files has been deleted."
+	@echo "$(GREEN)Objects files have been deleted."
 
 fclean: clean
 	@$(RM) $(NAME)
