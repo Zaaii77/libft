@@ -6,7 +6,7 @@
 /*   By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 18:54:24 by lowatell          #+#    #+#             */
-/*   Updated: 2024/11/05 12:28:11 by lowatell         ###   ########.fr       */
+/*   Updated: 2024/11/07 17:27:46 by lowatell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,6 @@ void	ft_putptr(size_t nbr, char *str)
 	size_t	size;
 
 	size = ft_strlen(str);
-	if (nbr < 0)
-	{
-		nbr = nbr * -1;
-		ft_putchar('-');
-	}
 	if (nbr >= size)
 	{
 		ft_putptr(nbr / size, str);
