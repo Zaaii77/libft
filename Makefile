@@ -6,7 +6,7 @@
 #    By: lowatell <lowatell@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/20 13:23:46 by lowatell          #+#    #+#              #
-#    Updated: 2024/11/27 22:41:58 by lowatell         ###   ########.fr        #
+#    Updated: 2025/01/03 16:12:25 by lowatell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,9 +55,7 @@ GNL_OBJS = $(addprefix $(GNL_DIR)/, $(GNL:.c=.o))
 
 GREEN = \033[32m
 
-all: bonus
-
-$(NAME): all
+all: $(NAME)
 
 clean:
 	@$(RM) $(OBJS) $(BONUS_OBJS) $(OBJS_PRINTF) $(GNL_OBJS)
@@ -69,7 +67,7 @@ fclean: clean
 
 re: fclean all
 
-bonus: $(OBJS) $(BONUS_OBJS) $(OBJS_PRINTF) $(GNL_OBJS)
+$(NAME): $(OBJS) $(BONUS_OBJS) $(OBJS_PRINTF) $(GNL_OBJS)
 	@$(AR) $(NAME) $(OBJS) $(BONUS_OBJS) $(OBJS_PRINTF) $(GNL_OBJS)
 	@echo "$(GREEN)libft.a has been compiled."
 
