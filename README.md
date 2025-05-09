@@ -11,7 +11,7 @@
 ## How to Use
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone git@github.com:Zaaii77/libft.git
    cd ft_printf/libft
    ```
 
