@@ -12,7 +12,7 @@
 1. Clone the repository:
    ```bash
    git clone git@github.com:Zaaii77/libft.git
-   cd ft_printf/libft
+   cd libft
    ```
 
 2. Compile the library:
